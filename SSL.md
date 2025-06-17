@@ -7,16 +7,24 @@ SSL đảm bảo rằng dữ liệu truyền giữa hai bên luôn **toàn vẹn
 
 # 2. Các cách xác thực SSL
 
-Có 3 loại xác thực chính:
+## Có 3 loại xác thực chính:
 
-- **DV (Domain Validation)**:  
-  Xác thực tên miền – loại đơn giản và nhanh nhất.
+## 1. Xác thực qua email:
 
-- **OV (Organization Validation)**:  
-  Xác thực tổ chức – cần xác minh thông tin doanh nghiệp.
+  Nhà cung cấp sẽ gửi một email từ SSL đến một trong các địa chỉ email liên quan đến tên miền của (ví dụ: admin@yourdomain.com, administrator@yourdomain.com).
+  Sau đó cần truy cập vào email đó và nhấp vào liên kết xác thực hoặc cung cấp mã xác thực được yêu cầu. 
 
-- **EV (Extended Validation)**:  
-  Xác thực mở rộng – kiểm tra kỹ lưỡng, hiển thị tên tổ chức trên thanh địa chỉ trình duyệt.
+## 2. Xác thực qua DNS:
+
+  * Cần thêm một bản ghi CNAME hoặc TXT vào cài đặt DNS của tên miền.
+  * Nhà cung cấp SSL sẽ cung cấp thông tin chi tiết về bản ghi cần thêm (tên bản ghi, giá trị bản ghi).
+  * Sau khi thêm bản ghi, cần chờ DNS cập nhật. 
+
+## 3. Xác thực qua tệp tin HTTP/HTTPS (File Based):
+
+   * Sẽ được cung cấp một tệp tin có tên và nội dung cụ thể.
+   * Sau đó cần tải tệp tin đó lên thư mục .well-known/pki-validation trên máy chủ web (hoặc một thư mục tương tự được chỉ định). 
+Nhà cung cấp SSL sẽ kiểm tra sự tồn tại và nội dung của tệp tin này để xác thực tên miền. 
 
 ---
 
