@@ -42,5 +42,3 @@ DNS bao gồm 7 loại bản ghi chính:
 - **Bước 4**: DNS Resolver trả IP về cho hệ điều hành và trình duyệt sử dụng để kết nối.
 
 ---
-
-> **Ghi chú**: DNS rất quan trọng cho việc duyệt web, gửi email và nhiều dịch vụ mạng khác.
