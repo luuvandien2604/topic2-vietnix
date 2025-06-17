@@ -128,7 +128,7 @@ Ví dụ:
 cat /etc/hostname
 ```
 
-## Cat dòng thứ <n> trong file
+## Trích xuất dòng thứ <n> trong file
 
 ```sh
 sed -n '5p' filename
@@ -140,6 +140,36 @@ Ví dụ:
 sed -n '10p' /etc/passwd
 ```
 
+## Ngoài ra có thể dùng sed command để 
+
+### Đọc dòng thứ n	
+```
+sed -n '10p' file.txt	
+```
+### In nhiều dòng cụ thể	
+```
+sed -n '5,8p' file.txt	#In từ dòng 5 đến dòng 8
+```
+### Xóa dòng
+```
+sed '5d' file.txt	#Xóa dòng thứ 5 (in ra file đã xóa dòng đó)
+```
+### Thay thế chuỗi
+```
+sed 's/old/new/' file.txt	#Tìm và thay old thành new trong từng dòng
+```
+### Chèn dòng mới	
+```
+sed '3i new_line' file.txt	#Chèn new_line trước dòng thứ 3
+```
+### Thêm dòng mới sau 1 dòng	
+```
+sed '3a new_line' file.txt	#Chèn new_line sau dòng thứ 3
+```
+### In dòng có chứa chuỗi	
+```
+sed -n '/abc/p' file.txt	 #In dòng có chứa abc
+```
 ## Cat nhiều dòng vào 1 file bằng EOF
 
 ```sh
