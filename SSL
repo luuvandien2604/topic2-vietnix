@@ -13,7 +13,7 @@
 4. Sử dụng OpenSSL để tạo file CSR cho `tech.training.vietnix.tech`
     Để tạo CSR, cần 2 bước:
       # Tạo khóa riêng tư (`.key`)
-        openssl genrsa -out tech.training.vietnix.tech.key 2048
+        ```openssl genrsa -out tech.training.vietnix.tech.key 2048```
       # Tạo CSR (`.csr`):
         openssl req -new -key tech.training.vietnix.tech.key -out tech.training.vietnix.tech.csr
         (Hệ thống sẽ yêu cầu nhập thông tin về domain, tổ chức, v.v.).
